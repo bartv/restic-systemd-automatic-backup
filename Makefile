@@ -36,6 +36,9 @@ etc/restic/b2_env.sh:
 etc/restic/b2_pw.txt:
 	install -m 0600 etc/restic/b2_pw.txt.template etc/restic/b2_pw.txt
 
+etc/restic/config.sh:
+	install -m 0600 etc/restic/config.sh etc/restic/config.sh etc/restic/config.sh
+
 # target: install-conf - Install restic configuration files.
 # will create these files locally only if they don't already exist
 install-conf: | etc/restic/b2_env.sh etc/restic/b2_pw.txt

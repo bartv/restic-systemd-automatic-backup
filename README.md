@@ -29,7 +29,6 @@ First, see this official Backblaze [tutorial](https://help.backblaze.com/hc/en-u
 Take note of the your account ID, application key and password for the next steps.
 
 
-
 ### 2. Configure your B2 account locally
 Put these files in `/etc/restic/`:
 * `b2_env.sh`: Fill this file out with your B2 bucket settings etc. The reason for putting these in a separate file is that it can be used also for you to simply source, when you want to issue some restic commands. For example:
@@ -48,7 +47,7 @@ restic init
 
 ### 4. Script for doing the backup
 Put this file in `/usr/local/sbin`:
-* `restic_backup.sh`: A script that defines how to run the backup. Edit this file to respect your needs in terms of backup which paths to backup, retention (number of backups to save), etc.
+* `restic_backup.sh`: A script that defines how to run the backup. The configuration for this script is stored in /etc/restic/config.sh. Edit this file to respect your needs in terms of backup which paths to backup, retention (number of backups to save), etc.
 
 Copy this file to `/etc/restic/backup_exclude` or `~/.backup_exclude`:
 * `.backup_exclude`: A list of file pattern paths to exclude from you backups, files that just occupy storage space, backup-time, network and money.
